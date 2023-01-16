@@ -205,4 +205,5 @@ node_modules
 # Local Netlify folder
 .netlify
 
+#gitignore
 .gitignore

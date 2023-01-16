@@ -12,9 +12,15 @@ require("dotenv").config()
 
 const app=express()
 app.use(express.json())
-app.use(cors({
-    origin:"*"
-}))
+app.use(cors())
+
+
+// Routers
+
+app.use("/users",userRouter)
+app.use(authentication)
+app.use("/todos",todoRouter)
+
 
 app.get("/",(req,res)=>{
 
@@ -22,12 +28,7 @@ app.get("/",(req,res)=>{
    
 })
 
-// Routers
 
-app.use("/users",userRouter)
-
-app.use(authentication)
-app.use("/todos",todoRouter)
 
 
 
